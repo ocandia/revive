@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Revive</title>
+  <!-- Elegant Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="background.css">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Ripple effect CSS (inserted above carousel) -->
+  <style>
+    .carousel-container {
+      position: relative;
+    }
+    .audio-wave {
+      position: absolute;
+      top: -180px;
+      left: 50%;
+      width: 360px;
+      height: 360px;
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+    .audio-wave span {
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 100px; height: 100px;
+      margin: -50px;
+      border: 6px solid currentColor;
+      border-radius: 50%;
+      box-shadow: 0 0 30px currentColor;
+      opacity: 0;
+      animation: rippleOscillate 5s infinite ease-in-out;
+    }
+    .audio-wave span:nth-child(1) {
+      color: #24fbff;
+      animation-delay: 0s;
+      animation-duration: 6s;
+    }
+    .audio-wave span:nth-child(2) {
+      color: #02e2c4;
+      animation-delay: 1s;
+      animation-duration: 5.5s;
+    }
+    .audio-wave span:nth-child(3) {
+      color: #fcb024;
+      animation-delay: 2s;
+      animation-duration: 5s;
+    }
+    .audio-wave span:nth-child(4) {
+      color: #ff24fb;
+      animation-delay: 3s;
+      animation-duration: 6.5s;
+    }
+    .audio-wave span:nth-child(5) {
+      color: #0af1bf;
+      animation-delay: 4s;
+      animation-duration: 6s;
+    }
+    @keyframes rippleOscillate {
+      0%   { transform: scale(0.3); opacity: 0.8; }
+      50%  { transform: scale(3);   opacity: 0;   }
+      100% { transform: scale(0.3); opacity: 0.8; }
+    }
+  </style>
+</head>
+<body>
+  <!-- PBS Audio -->
+  <audio id="pbs-audio" src="../audio/PBS.mp3" preload="auto" autoplay muted></audio>
+  <!-- Log Off button -->
+  <button id="logoff-btn" onclick="window.location.href='login.html'">Log Off</button>
+  <!-- Cosmic background layer -->
+  <div class="space"></div>
+  <div class="space"></div>
+  <header class="main-header">
+    <!-- Logo -->
+    <img src="logo_revive.png" alt="Revive Logo" class="logo">
+  </header>
+
+  <div class="carousel-container">
+    <button class="nav-arrow left">‹</button>
+    <!-- Ripple animation inserted here -->
+    <div class="audio-wave">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="carousel-track">
+      <!-- slides 0–24 -->
+      <div class="card" data-index="0">
+        <img src="src/photos/Evelia Candia.jpg" alt="Evelia Candia">
+        <div class="card-label">Evelia Candia</div>
+      </div>
+      <div class="card" data-index="1">
+        <img src="src/photos/Arlene B. Welborn.webp" alt="Arlene B. Welborn">
+        <div class="card-label">Arlene B. Welborn</div>
+      </div>
+      <div class="card" data-index="2">
+        <img src="src/photos/Bennie D. Cooley.webp" alt="Bennie D. Cooley">
+        <div class="card-label">Bennie D. Cooley</div>
+      </div>
+      <div class="card" data-index="3">
+        <img src="src/photos/Consuelo G. Silva.jpg" alt="Consuelo G. Silva">
+        <div class="card-label">Consuelo G. Silva</div>
+      </div>
+      <div class="card" data-index="4">
+        <img src="src/photos/Gary P. Newton.webp" alt="Gary P. Newton">
+        <div class="card-label">Gary P. Newton</div>
+      </div>
+      <div class="card" data-index="5">
+        <img src="src/photos/Gladys C. 'Boots' Healy.webp" alt="Gladys C. 'Boots' Healy">
+        <div class="card-label">Gladys C. 'Boots' Healy</div>
+      </div>
+      <div class="card" data-index="6">
+        <img src="src/photos/Ira Batt, 'The Battman'.webp" alt="Ira Batt, 'The Battman'">
+        <div class="card-label">Ira Batt, 'The Battman'</div>
+      </div>
+      <div class="card" data-index="7">
+        <img src="src/photos/Irene A. Fernandez.webp" alt="Irene A. Fernandez">
+        <div class="card-label">Irene A. Fernandez</div>
+      </div>
+      <div class="card" data-index="8">
+        <img src="src/photos/Irene Porras Ortega.webp" alt="Irene Porras Ortega">
+        <div class="card-label">Irene Porras Ortega</div>
+      </div>
+      <div class="card" data-index="9">
+        <img src="src/photos/Javier Jose Montenegro.webp" alt="Javier Jose Montenegro">
+        <div class="card-label">Javier Jose Montenegro</div>
+      </div>
+      <div class="card" data-index="10">
+        <img src="src/photos/Jesus Lugo.webp" alt="Jesus Lugo">
+        <div class="card-label">Jesus Lugo</div>
+      </div>
+      <div class="card" data-index="11">
+        <img src="src/photos/Julia Moore Jones.webp" alt="Julia Moore Jones">
+        <div class="card-label">Julia Moore Jones</div>
+      </div>
+      <div class="card" data-index="12">
+        <img src="src/photos/Kevin Jay Jessup.webp" alt="Kevin Jay Jessup">
+        <div class="card-label">Kevin Jay Jessup</div>
+      </div>
+      <div class="card" data-index="13">
+        <img src="src/photos/Lillian Del Socorro Goss.webp" alt="Lillian Del Socorro Goss">
+        <div class="card-label">Lillian Del Socorro Goss</div>
+      </div>
+      <div class="card" data-index="14">
+        <img src="src/photos/Maria Elena Pantoja Perez.webp" alt="Maria Elena Pantoja Perez">
+        <div class="card-label">Maria Elena Pantoja Perez</div>
+      </div>
+      <div class="card" data-index="15">
+        <img src="src/photos/Maria Luisa Hawkins.webp" alt="Maria Luisa Hawkins">
+        <div class="card-label">Maria Luisa Hawkins</div>
+      </div>
+      <div class="card" data-index="16">
+        <img src="src/photos/Marilyn Wanda Denny Sowles.webp" alt="Marilyn Wanda Denny Sowles">
+        <div class="card-label">Marilyn Wanda Denny Sowles</div>
+      </div>
+      <div class="card" data-index="17">
+        <img src="src/photos/Marvin Abrams.jpg" alt="Marvin Abrams">
+        <div class="card-label">Marvin Abrams</div>
+      </div>
+      <div class="card" data-index="18">
+        <img src="src/photos/Nancy Fairbanks Herndon.webp" alt="Nancy Fairbanks Herndon">
+        <div class="card-label">Nancy Fairbanks Herndon</div>
+      </div>
+      <div class="card" data-index="19">
+        <img src="src/photos/Rebecca R. Cardenas.webp" alt="Rebecca R. Cardenas">
+        <div class="card-label">Rebecca R. Cardenas</div>
+      </div>
+      <div class="card" data-index="20">
+        <img src="src/photos/Sandra Licon Tims.webp" alt="Sandra Licon Tims">
+        <div class="card-label">Sandra Licon Tims</div>
+      </div>
+      <div class="card" data-index="21">
+        <img src="src/photos/Terry Arroyo Gómez.webp" alt="Terry Arroyo Gómez">
+        <div class="card-label">Terry Arroyo Gómez</div>
+      </div>
+      <div class="card" data-index="22">
+        <img src="src/photos/Todd M Blaugrund.webp" alt="Todd M Blaugrund">
+        <div class="card-label">Todd M Blaugrund</div>
+      </div>
+      <div class="card" data-index="23">
+        <img src="src/photos/Alfonso Carpio Jr..webp" alt="Alfonso Carpio Jr.">
+        <div class="card-label">Alfonso Carpio Jr.</div>
+      </div>
+      <div class="card" data-index="24">
+        <img src="src/photos/Paula G. Garner.webp" alt="Paula G. Garner">
+        <div class="card-label">Paula G. Garner</div>
+      </div>
+    </div>
+
+    <button class="nav-arrow right">›</button>
+  </div>
+
+  <div id="alphabet-nav" class="alphabet-nav"></div>
+  <script src="script.js"></script>
+</body>
+</html>

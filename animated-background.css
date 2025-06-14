@@ -1,0 +1,233 @@
+/* animated-background.css */
+/* Starry night background with comets - Reusable for login, register, and other pages */
+
+/* Apply this class to body or main container */
+.starry-background {
+    position: relative;
+    background-color: #000000;
+    overflow: hidden;
+}
+
+/* Main starfield */
+.starry-background::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        /* Large bright stars */
+        radial-gradient(2px 2px at 20px 30px, #fff, transparent),
+        radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.9), transparent),
+        radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+        radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.7), transparent),
+        radial-gradient(2px 2px at 160px 30px, #eee, transparent),
+        radial-gradient(1px 1px at 200px 90px, rgba(255,255,255,0.8), transparent),
+        radial-gradient(2px 2px at 240px 50px, #fff, transparent),
+        radial-gradient(1px 1px at 280px 10px, rgba(255,255,255,0.6), transparent),
+        radial-gradient(1px 1px at 320px 120px, #ddd, transparent),
+        radial-gradient(2px 2px at 360px 60px, rgba(255,255,255,0.9), transparent),
+        
+        /* Medium stars */
+        radial-gradient(1px 1px at 50px 100px, rgba(255,255,255,0.5), transparent),
+        radial-gradient(1px 1px at 100px 20px, rgba(255,255,255,0.4), transparent),
+        radial-gradient(1px 1px at 150px 110px, rgba(255,255,255,0.6), transparent),
+        radial-gradient(1px 1px at 180px 150px, rgba(255,255,255,0.3), transparent),
+        radial-gradient(1px 1px at 220px 20px, rgba(255,255,255,0.5), transparent),
+        radial-gradient(1px 1px at 260px 140px, rgba(255,255,255,0.4), transparent),
+        radial-gradient(1px 1px at 300px 80px, rgba(255,255,255,0.6), transparent),
+        radial-gradient(1px 1px at 340px 30px, rgba(255,255,255,0.3), transparent),
+        
+        /* Small twinkling stars */
+        radial-gradient(0.5px 0.5px at 25px 60px, rgba(255,255,255,0.3), transparent),
+        radial-gradient(0.5px 0.5px at 75px 120px, rgba(255,255,255,0.2), transparent),
+        radial-gradient(0.5px 0.5px at 125px 40px, rgba(255,255,255,0.4), transparent),
+        radial-gradient(0.5px 0.5px at 175px 80px, rgba(255,255,255,0.2), transparent),
+        radial-gradient(0.5px 0.5px at 225px 140px, rgba(255,255,255,0.3), transparent),
+        radial-gradient(0.5px 0.5px at 275px 20px, rgba(255,255,255,0.2), transparent),
+        radial-gradient(0.5px 0.5px at 325px 100px, rgba(255,255,255,0.4), transparent),
+        radial-gradient(0.5px 0.5px at 375px 70px, rgba(255,255,255,0.2), transparent);
+        
+    background-size: 400px 200px, 300px 250px, 200px 150px;
+    background-position: 0 0, 100px 100px, 200px 50px;
+    animation: sparkle 25s linear infinite, drift 60s ease-in-out infinite alternate;
+    z-index: -10;
+}
+
+/* Comets and shooting stars */
+.starry-background::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        /* Golden comet */
+        radial-gradient(ellipse 100px 2px at 0% 50%, rgba(255,215,0,0.8), transparent 70%),
+        /* Blue comet */
+        radial-gradient(ellipse 80px 1px at 100% 30%, rgba(135,206,235,0.6), transparent 70%),
+        /* White shooting star */
+        radial-gradient(ellipse 60px 1px at 50% 80%, rgba(255,255,255,0.7), transparent 70%);
+    animation: 
+        comet1 20s ease-in-out infinite,
+        comet2 25s ease-in-out infinite 5s,
+        comet3 30s ease-in-out infinite 10s;
+    z-index: -9;
+}
+
+/* Distant nebula glow */
+.starry-background .nebula {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(ellipse at 20% 20%, rgba(138, 43, 226, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(255, 20, 147, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 60% 40%, rgba(0, 191, 255, 0.06) 0%, transparent 50%);
+    animation: nebulaPulse 40s ease-in-out infinite alternate;
+    z-index: -11;
+}
+
+/* Keyframe animations */
+@keyframes sparkle {
+    0%, 100% { 
+        transform: translateY(0px) rotate(0deg); 
+        opacity: 1; 
+    }
+    25% { 
+        transform: translateY(-5px) rotate(90deg); 
+        opacity: 0.8; 
+    }
+    50% { 
+        transform: translateY(-10px) rotate(180deg); 
+        opacity: 0.6; 
+    }
+    75% { 
+        transform: translateY(-5px) rotate(270deg); 
+        opacity: 0.8; 
+    }
+}
+
+@keyframes drift {
+    0% { 
+        transform: translateX(0px) translateY(0px); 
+    }
+    100% { 
+        transform: translateX(10px) translateY(-10px); 
+    }
+}
+
+@keyframes comet1 {
+    0% { 
+        transform: translateX(-100vw) translateY(100vh) rotate(45deg); 
+        opacity: 0; 
+    }
+    10% { 
+        opacity: 1; 
+    }
+    90% { 
+        opacity: 1; 
+    }
+    100% { 
+        transform: translateX(100vw) translateY(-100vh) rotate(45deg); 
+        opacity: 0; 
+    }
+}
+
+@keyframes comet2 {
+    0% { 
+        transform: translateX(100vw) translateY(-50vh) rotate(-30deg); 
+        opacity: 0; 
+    }
+    15% { 
+        opacity: 0.8; 
+    }
+    85% { 
+        opacity: 0.8; 
+    }
+    100% { 
+        transform: translateX(-100vw) translateY(50vh) rotate(-30deg); 
+        opacity: 0; 
+    }
+}
+
+@keyframes comet3 {
+    0% { 
+        transform: translateX(-50vw) translateY(-100vh) rotate(60deg); 
+        opacity: 0; 
+    }
+    20% { 
+        opacity: 0.6; 
+    }
+    80% { 
+        opacity: 0.6; 
+    }
+    100% { 
+        transform: translateX(50vw) translateY(100vh) rotate(60deg); 
+        opacity: 0; 
+    }
+}
+
+@keyframes nebulaPulse {
+    0% { 
+        opacity: 0.3; 
+        transform: scale(1); 
+    }
+    50% { 
+        opacity: 0.6; 
+        transform: scale(1.1); 
+    }
+    100% { 
+        opacity: 0.3; 
+        transform: scale(1); 
+    }
+}
+
+/* Twinkling effect for specific star layers */
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+/* Additional classes for different intensity levels */
+.starry-background.intense::before {
+    animation-duration: 15s;
+}
+
+.starry-background.subtle::before {
+    opacity: 0.6;
+    animation-duration: 40s;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+    .starry-background::before {
+        background-size: 300px 150px, 200px 200px, 150px 100px;
+        animation-duration: 20s;
+    }
+    
+    .starry-background::after {
+        animation-duration: 15s, 20s, 25s;
+    }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .starry-background::before,
+    .starry-background::after,
+    .starry-background .nebula {
+        animation: none;
+    }
+    
+    .starry-background::before {
+        opacity: 0.8;
+    }
+    
+    .starry-background::after {
+        opacity: 0.3;
+    }
+}

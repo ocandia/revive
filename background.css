@@ -1,0 +1,69 @@
+/* background.css - Enhanced starfield with larger, glowing stars */
+
+.space {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: #000;
+  filter: blur(1.5px); /* Blur starfield */
+
+  /* Static stars: larger sizes and glow via box-shadow in ::before */
+  background-image:
+    radial-gradient(circle 2px at 15% 25%, #fff 60%, transparent 61%),
+    radial-gradient(circle 4px at 35% 55%, rgb(217, 217, 16) 60%, transparent 61%),
+    radial-gradient(circle 3px at 65% 85%, #9cf 60%, transparent 61%),
+    radial-gradient(circle 6px at 45% 15%, rgb(15, 233, 146) 60%, transparent 61%),
+    radial-gradient(circle 5px at 75% 40%, #cff 60%, transparent 61%);
+  background-size: 120px 120px, 200px 200px, 160px 160px, 240px 240px, 280px 280px;
+  animation: bgMove 100s linear infinite;
+}
+
+@keyframes bgMove {
+  from {
+    background-position: 0 0, 0 0, 0 0, 0 0, 0 0;
+  }
+  to {
+    background-position: -1200px 800px, 900px -1000px, 600px 1200px, -800px -700px, 1200px 400px;
+  }
+}
+
+/* Glowing static stars overlay */
+.space::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(circle 5px at 25% 30%, rgba(255,255,255,0.8) 0%, transparent 80%),
+    radial-gradient(circle 9px at 50% 60%, rgba(255,216,0,0.8) 0%, transparent 80%),
+    radial-gradient(circle 6px at 75% 20%, rgba(173,223,255,0.8) 0%, transparent 80%);
+  background-size: 300px 300px, 240px 240px, 360px 360px;
+  filter: blur(2px);
+}
+
+/* Blinking stars overlay (enhanced glow) */
+.space::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(circle 3px at 20% 35%, rgba(255,255,255,0.9) 40%, transparent 41%),
+    radial-gradient(circle 2px at 50% 65%, rgba(255,223,150,0.9) 40%, transparent 41%),
+    radial-gradient(circle 3px at 80% 25%, rgba(173,223,255,0.9) 40%, transparent 41%);
+  background-size: 220px 220px, 200px 200px, 240px 240px;
+  animation: blinkStars 4s ease-in-out infinite;
+  filter: blur(4px);
+}
+
+@keyframes blinkStars {
+  0%, 10%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}

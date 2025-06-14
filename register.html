@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Revive — Register</title>
+  <!-- Cosmic background and main styles -->
+  <link rel="stylesheet" href="background.css">
+  <link rel="stylesheet" href="style.css">
+  <!-- Auth-form overrides -->
+  <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+  <div class="space"></div>
+
+  <div class="auth-container">
+    <!-- same .logo here too -->
+    <img src="logo_revive.png" alt="Revive Logo" class="logo">
+
+    <form class="auth-form" action="#" method="post">
+      <h2>Create Account</h2>
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Your full name" required>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required>
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="••••••••" required>
+      <label for="confirm-password">Confirm Password</label>
+      <input type="password" id="confirm-password" name="confirm-password" placeholder="••••••••" required>
+      <button type="submit">Register</button>
+      <p class="switch-link">
+        Already have an account? <a href="login.html">Log in here</a>
+      </p>
+    </form>
+  </div>
+</body>
+</html>

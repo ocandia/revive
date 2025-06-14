@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Revive — Login</title>
+  <link rel="stylesheet" href="background.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+  <div class="space"></div>
+
+  <!-- Audio autoplay -->
+  <audio id="pbs-audio" src="audio/PBS.mp3" preload="auto" autoplay></audio>
+
+  <div class="auth-container">
+    <img src="logo_revive.png" alt="Revive Logo" class="logo">
+    <form class="auth-form">
+      <h2>Login</h2>
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="you@example.com" required>
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="••••••••" required>
+      <button type="submit">Log In</button>
+      <p class="switch-link">
+        Don’t have an account? <a href="register.html">Register here</a>
+      </p>
+    </form>
+  </div>
+
+  <script>
+    document.querySelector('.auth-form').addEventListener('submit', e => {
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      const pass  = document.getElementById('password').value;
+      // hard-coded credentials
+      if (email === 'admin@example.com' && pass === 'password123') {
+        // redirect with fade flag
+        window.location.href = 'index.html?fade=true';
+      } else {
+        alert('Invalid credentials');
+      }
+    });
+  </script>
+</body>
+</html>
